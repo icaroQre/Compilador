@@ -1,0 +1,27 @@
+:DECLARACOES
+argumento:INTEIRO
+fatorial:INTEIRO
+jose:REAL
+aux:INTEIRO
+
+:ALGORITMO
+% Calcula o fatorial de um número inteiro
+LER argumento
+ATRIBUIR argumento A fatorial
+SE argumento = 0 ENTAO ATRIBUIR 1 A fatorial
+
+LER antonio
+
+ENQUANTO argumento > 1
+   INICIO
+	ATRIBUIR fatorial * (argumento - 1) A fatorial
+	ATRIBUIR argumento - 1 A argumento
+
+	ATRIBUIR jose A argumento
+
+	ATRIBUIR jose + 5 A aux
+
+	LER junior	
+
+   FIM
+IMPRIMIR fatorial
