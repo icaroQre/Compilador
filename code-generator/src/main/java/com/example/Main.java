@@ -3,7 +3,6 @@ package com.example;
 import com.example.OswaldoParser.ProgramaContext;
 import java.io.IOException;
 import java.io.PrintWriter;
-
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -18,7 +17,7 @@ public class Main {
         OswaldoSemantico as = new OswaldoSemantico();
         as.visitPrograma(arvore);
         OswaldoSemanticoUtils.errosSemanticos.forEach((s) -> System.out.println(s));
-
+        
         if(OswaldoSemanticoUtils.errosSemanticos.isEmpty()) {
             OswaldoGeradorC agc = new OswaldoGeradorC();
             agc.visitPrograma(arvore);

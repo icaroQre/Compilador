@@ -31,23 +31,23 @@ public class OswaldoGeradorC extends OswaldoBaseVisitor<Void> {
         String strTipoVar = ctx.TIPO_VAR().getText();
         TabelaDeSimbolos.TipoOswaldo tipoVar = TabelaDeSimbolos.TipoOswaldo.INVALIDO;
         switch (strTipoVar) {
-            case "INTEIRO":
+            case "INTEIRO" -> {
                 tipoVar = TabelaDeSimbolos.TipoOswaldo.INTEIRO;
                 strTipoVar = "int";
-                break;
-            case "REAL":
+            }
+            case "REAL" -> {
                 tipoVar = TabelaDeSimbolos.TipoOswaldo.REAL;
                 strTipoVar = "float";
-                break;
-            default:
-                // Nunca irá acontecer, pois o analisador sintático
-                // não permite
-                break;
+            }
+            default -> {
+            }
         }
+        // Nunca irá acontecer, pois o analisador sintático
+        // não permite
         // Podemos adicionar na tabela de símbolos sem verificar
         // pois a análise semântica já fez as verificações
         tabela.adicionar(nomeVar, tipoVar);
-        saida.append(strTipoVar + " " + nomeVar + ";\n");
+        saida.append(strTipoVar).append(" ").append(nomeVar).append(";\n");
         return null;
     }
 
@@ -78,16 +78,10 @@ public class OswaldoGeradorC extends OswaldoBaseVisitor<Void> {
         TipoOswaldo tipoVariavel = OswaldoSemanticoUtils.verificarTipo(tabela, nomeVar);
         String aux = "";
         switch (tipoVariavel) {
-            case INTEIRO:
-                aux = "%d";
-                break;
-            case REAL:
-                aux = "%f";
-                break;
-            default:
-                break;
+            case INTEIRO -> aux = "%d";
+            case REAL -> aux = "%f";
         }
-        saida.append("scanf(\"" + aux + "\", &" + nomeVar + ");\n");
+        saida.append("scanf(\"").append(aux).append("\", &").append(nomeVar).append(");\n");
         return null;
     }
 
@@ -105,21 +99,15 @@ public class OswaldoGeradorC extends OswaldoBaseVisitor<Void> {
         if (ctx.CADEIA() != null) {
             String aux = ctx.CADEIA().getText();
             aux = aux.substring(1, aux.length() - 1);
-            saida.append("printf(\"" + aux + "\\n\");\n");
+            saida.append("printf(\"").append(aux).append("\\n\");\n");
         } else {
             TipoOswaldo tipoExpressao = OswaldoSemanticoUtils.verificarTipo(tabela, ctx.expressaoAritmetica());
             String aux = "";
             switch (tipoExpressao) {
-                case INTEIRO:
-                    aux = "%d";
-                    break;
-                case REAL:
-                    aux = "%f";
-                    break;
-                default:
-                    break;
+                case INTEIRO -> aux = "%d";
+                case REAL -> aux = "%f";
             }
-            saida.append("printf(\"" + aux + "\\n\",");
+            saida.append("printf(\"").append(aux).append("\\n\",");
             visitExpressaoAritmetica(ctx.expressaoAritmetica());
             saida.append(");\n");
         }
@@ -180,7 +168,7 @@ public class OswaldoGeradorC extends OswaldoBaseVisitor<Void> {
             } else {
                 aux = "||";
             }
-            saida.append(" " + aux + " ");
+            saida.append(" ").append(aux).append(" ");
             visitTermoRelacional(ctx.termoRelacional(i + 1));
         }
         return null;
@@ -200,7 +188,7 @@ public class OswaldoGeradorC extends OswaldoBaseVisitor<Void> {
             } else if (aux.equals("=")) {
                 aux = "==";
             }
-            saida.append(" " + aux + " ");
+            saida.append(" ").append(aux).append(" ");
             visitExpressaoAritmetica(ctx.expressaoAritmetica(1));
         }
         return null;

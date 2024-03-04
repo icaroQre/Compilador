@@ -1,5 +1,4 @@
 com\example\Main.class
-com\example\Oswaldo.interp
 com\example\OswaldoListener.class
 com\example\OswaldoParser$ExpressaoAritmeticaContext.class
 com\example\TabelaDeSimbolos$TipoOswaldo.class
@@ -26,5 +25,4 @@ com\example\OswaldoParser$ExpressaoRelacionalContext.class
 com\example\OswaldoBaseListener.class
 com\example\OswaldoGeradorC.class
 com\example\OswaldoParser$ComandoEntradaContext.class
-com\example\OswaldoLexer.interp
 com\example\OswaldoSemantico.class
