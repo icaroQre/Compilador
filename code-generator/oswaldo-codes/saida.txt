@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int argumento;
+int fatorial;
+
+int main() {
+scanf("%d", &argumento);
+fatorial = argumento;
+if(argumento == 0)
+fatorial = 1;
+while(argumento > 1)
+{
+fatorial = fatorial * (argumento - 1);
+argumento = argumento - 1;
+}
+printf("%d\n",fatorial);
+}
