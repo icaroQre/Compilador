@@ -2,7 +2,7 @@
 
 ## Introducao
 
-O CloackCompiller foi desenvolvido como trabalho final da disciplina de compiladores da turma do terceiro ano da Universidade Estadual do Norte do Paraná. O compilador em questão gera códigos em C a partir da linguagem aceita
+O CloackCompiller foi desenvolvido como trabalho final da disciplina de compiladores da Universidade Estadual do Norte do Paraná. O compilador em questão gera códigos em C a partir da linguagem aceita.
 
 ## Estrutura
 
