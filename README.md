@@ -18,18 +18,26 @@ O CloackCompiller foi desenvolvido como trabalho final da disciplina de compilad
 * read --> LER
 * int --> INTEIRO
 * float --> REAL
-* string --> 
+* string --> STRING
+* boolean --> BOOLEANO
 * atribuir valor de variável à outra --> ATRIBUIR nomeVariavel A nomeVariavel
 * criação de vairável --> nomeVariavel:Tipo
 * if --> SE
 * while --> ENQUANTO
+* funcao --> PLANEJE sub-algoritmo
 * iniciar sub-algoritmo {  --> INICIO
 * fechar sub_algoritmo }  --> FIM
+* && --> E
+* || --> OU
+* true --> VERDADEIRO
+* false --> FALSO
 
-## Funcionamento
+## Como Testar
 
 1. Clone o repositório https://github.com/icaroQre/Compilador.git
-2. 
+2. Buildar pacote "code-generator"
+3. abra o cmd e navegue até diretório onde foi gerado o arquivo ".jar"
+4. Executa o arquivo ".jar" com o comando: "java ~jar" e passando o arquivo com o código de entrada
 
 ## Exemplo entrada
 ```
@@ -37,21 +45,19 @@ O CloackCompiller foi desenvolvido como trabalho final da disciplina de compilad
 :DECLARACOES
 argumento:INTEIRO
 fatorial:INTEIRO
+palavra:STRING
 
 :ALGORITMO
-
 % Calcula o fatorial de um número inteiro
 LER argumento
 ATRIBUIR argumento A fatorial
 SE argumento = 0 ENTAO ATRIBUIR 1 A fatorial
-
 ENQUANTO argumento > 1
    INICIO
       ATRIBUIR fatorial * (argumento - 1) A fatorial
       ATRIBUIR argumento - 1 A argumento
    FIM
 IMPRIMIR fatorial
-
 ```
 
 ## Saída do exemplo
@@ -61,6 +67,7 @@ IMPRIMIR fatorial
 
 int argumento;
 int fatorial;
+char palavra[100];
 
 int main() {
 scanf("%d", &argumento);
@@ -68,6 +75,12 @@ fatorial = argumento;
 if(argumento == 0)
 fatorial = 1;
 while(argumento > 1)
+{
+fatorial = fatorial * (argumento - 1);
+argumento = argumento - 1;
+}
+printf("%d\n",fatorial);
+}
 {
 fatorial = fatorial * (argumento - 1);
 argumento = argumento - 1;
