@@ -180,6 +180,18 @@ public class OswaldoBaseListener implements OswaldoListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitSubAlgoritmo(OswaldoParser.SubAlgoritmoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFunc(OswaldoParser.FuncContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFunc(OswaldoParser.FuncContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

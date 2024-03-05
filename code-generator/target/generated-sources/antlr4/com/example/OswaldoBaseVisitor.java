@@ -110,4 +110,11 @@ public class OswaldoBaseVisitor<T> extends AbstractParseTreeVisitor<T> implement
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitSubAlgoritmo(OswaldoParser.SubAlgoritmoContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitFunc(OswaldoParser.FuncContext ctx) { return visitChildren(ctx); }
 }

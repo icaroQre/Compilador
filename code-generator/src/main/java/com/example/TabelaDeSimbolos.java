@@ -7,6 +7,7 @@ public class TabelaDeSimbolos {
     public enum TipoOswaldo {
         INTEIRO,
         REAL,
+        STRING,
         INVALIDO
     }
     

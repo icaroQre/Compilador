@@ -147,4 +147,14 @@ public interface OswaldoListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSubAlgoritmo(OswaldoParser.SubAlgoritmoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link OswaldoParser#func}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunc(OswaldoParser.FuncContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link OswaldoParser#func}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunc(OswaldoParser.FuncContext ctx);
 }

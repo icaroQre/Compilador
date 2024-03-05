@@ -34,10 +34,17 @@ public class OswaldoGeradorC extends OswaldoBaseVisitor<Void> {
             case "INTEIRO" -> {
                 tipoVar = TabelaDeSimbolos.TipoOswaldo.INTEIRO;
                 strTipoVar = "int";
+                saida.append(strTipoVar).append(" ").append(nomeVar).append(";\n");
             }
             case "REAL" -> {
                 tipoVar = TabelaDeSimbolos.TipoOswaldo.REAL;
                 strTipoVar = "float";
+                saida.append(strTipoVar).append(" ").append(nomeVar).append(";\n");
+            }
+            case "STRING" -> {
+                tipoVar = TabelaDeSimbolos.TipoOswaldo.STRING;
+                strTipoVar = "char";
+                saida.append(strTipoVar).append(" ").append(nomeVar).append("[100];\n");
             }
             default -> {
             }
@@ -47,7 +54,6 @@ public class OswaldoGeradorC extends OswaldoBaseVisitor<Void> {
         // Podemos adicionar na tabela de símbolos sem verificar
         // pois a análise semântica já fez as verificações
         tabela.adicionar(nomeVar, tipoVar);
-        saida.append(strTipoVar).append(" ").append(nomeVar).append(";\n");
         return null;
     }
 
@@ -56,7 +62,7 @@ public class OswaldoGeradorC extends OswaldoBaseVisitor<Void> {
         saida.append(ctx.VARIAVEL().getText() + " = ");
         visitExpressaoAritmetica(ctx.expressaoAritmetica());
         saida.append(";\n");
-        return null;
+        return null; 
     }
 
     @Override
@@ -80,6 +86,7 @@ public class OswaldoGeradorC extends OswaldoBaseVisitor<Void> {
         switch (tipoVariavel) {
             case INTEIRO -> aux = "%d";
             case REAL -> aux = "%f";
+            case STRING -> aux = "%s";
         }
         saida.append("scanf(\"").append(aux).append("\", &").append(nomeVar).append(");\n");
         return null;
@@ -106,6 +113,7 @@ public class OswaldoGeradorC extends OswaldoBaseVisitor<Void> {
             switch (tipoExpressao) {
                 case INTEIRO -> aux = "%d";
                 case REAL -> aux = "%f";
+                case STRING -> aux = "%s";
             }
             saida.append("printf(\"").append(aux).append("\\n\",");
             visitExpressaoAritmetica(ctx.expressaoAritmetica());

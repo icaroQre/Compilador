@@ -3,6 +3,7 @@
 
 int argumento;
 int fatorial;
+char palavra[100];
 
 int main() {
 scanf("%d", &argumento);

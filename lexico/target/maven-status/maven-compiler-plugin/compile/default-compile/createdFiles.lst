@@ -1,0 +1,16 @@
+com\example\OswaldoParser$DeclaracaoContext.class
+com\example\OswaldoParser$FatorAritmeticoContext.class
+com\example\OswaldoParser$TermoAritmeticoContext.class
+com\example\OswaldoParser$ExpressaoAritmeticaContext.class
+com\example\OswaldoParser$FuncContext.class
+com\example\OswaldoParser$ComandoCondicaoContext.class
+com\example\OswaldoParser$ComandoSaidaContext.class
+com\example\OswaldoParser$TermoRelacionalContext.class
+com\example\OswaldoParser$ComandoRepeticaoContext.class
+com\example\OswaldoParser$ComandoAtribuicaoContext.class
+com\example\OswaldoParser$ProgramaContext.class
+com\example\OswaldoParser$ComandoContext.class
+com\example\OswaldoParser$ExpressaoRelacionalContext.class
+com\example\OswaldoParser$SubAlgoritmoContext.class
+com\example\OswaldoParser.class
+com\example\OswaldoParser$ComandoEntradaContext.class

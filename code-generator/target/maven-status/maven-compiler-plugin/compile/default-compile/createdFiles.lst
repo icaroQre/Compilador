@@ -16,6 +16,7 @@ com\example\TabelaDeSimbolos.class
 com\example\OswaldoParser$DeclaracaoContext.class
 com\example\OswaldoParser$FatorAritmeticoContext.class
 com\example\OswaldoParser$TermoAritmeticoContext.class
+com\example\OswaldoParser$FuncContext.class
 com\example\OswaldoParser$ComandoCondicaoContext.class
 com\example\OswaldoParser$ComandoSaidaContext.class
 com\example\OswaldoParser$TermoRelacionalContext.class

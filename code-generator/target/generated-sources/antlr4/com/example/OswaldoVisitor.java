@@ -94,4 +94,10 @@ public interface OswaldoVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitSubAlgoritmo(OswaldoParser.SubAlgoritmoContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link OswaldoParser#func}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunc(OswaldoParser.FuncContext ctx);
 }
